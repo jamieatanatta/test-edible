@@ -1,16 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "product-information",
-      "settings": {
-        "content_width": "content-center-aligned",
-        "desktop_media_position": "left",
-        "gap": 16,
-        "enable_sticky_add_to_cart": true,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      },
       "blocks": {
         "media-gallery": {
           "type": "_product-media-gallery",
@@ -32,8 +32,8 @@
               "type": "text",
               "settings": {
                 "text": "<h1>{{ closest.product.title }}</h1>",
-                "type_preset": "h2",
-                "alignment": "left"
+                "alignment": "left",
+                "type_preset": "h2"
               }
             },
             "price": {
@@ -119,6 +119,15 @@
             "ingredients-allergens"
           ]
         }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "gap": 16,
+        "enable_sticky_add_to_cart": true,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "reviews": {
@@ -139,25 +148,14 @@
     },
     "faq": {
       "type": "section",
-      "settings": {
-        "content_direction": "column",
-        "horizontal_alignment_flex_direction_column": "start",
-        "vertical_alignment_flex_direction_column": "start",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "auto",
-        "color_scheme": "scheme-faq",
-        "padding-block-start": 80,
-        "padding-block-end": 80
-      },
       "blocks": {
         "heading": {
           "type": "text",
           "settings": {
             "text": "<h3>Frequently Asked Questions</h3>",
-            "type_preset": "h2",
             "width": "fill",
             "alignment": "left",
+            "type_preset": "h2",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -188,6 +186,9 @@
                   "type": "text",
                   "settings": {
                     "text": "<p>Edible Arrangements® has the best fruit basket delivery service, preparing every fruit basket shortly before delivery so it arrives on your recipient's doorstep at the peak of freshness. Plus, you can</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
                     "font_size": "",
@@ -195,9 +196,6 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -205,7 +203,9 @@
                   }
                 }
               },
-              "block_order": ["text"]
+              "block_order": [
+                "text"
+              ]
             },
             "row-2": {
               "type": "_accordion-row",
@@ -217,6 +217,9 @@
                   "type": "text",
                   "settings": {
                     "text": "<p></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
                     "font_size": "",
@@ -224,9 +227,6 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -234,7 +234,9 @@
                   }
                 }
               },
-              "block_order": ["text"]
+              "block_order": [
+                "text"
+              ]
             },
             "row-3": {
               "type": "_accordion-row",
@@ -246,6 +248,9 @@
                   "type": "text",
                   "settings": {
                     "text": "<p></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
                     "font_size": "",
@@ -253,9 +258,6 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -263,31 +265,36 @@
                   }
                 }
               },
-              "block_order": ["text"]
+              "block_order": [
+                "text"
+              ]
             }
           },
-          "block_order": ["row-1", "row-2", "row-3"]
+          "block_order": [
+            "row-1",
+            "row-2",
+            "row-3"
+          ]
         }
       },
-      "block_order": ["heading", "accordion"]
+      "block_order": [
+        "heading",
+        "accordion"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "start",
+        "vertical_alignment_flex_direction_column": "start",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "auto",
+        "color_scheme": "scheme-faq",
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
     },
     "blogs": {
       "type": "product-list",
-      "settings": {
-        "layout_type": "carousel",
-        "max_products": 7,
-        "columns": 4,
-        "mobile_card_size": "44cqw",
-        "columns_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "circle",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 40,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 80,
-        "padding-block-end": 80
-      },
       "blocks": {
         "static-header": {
           "type": "_product-list-content",
@@ -326,6 +333,9 @@
               "type": "_product-list-text",
               "settings": {
                 "text": "<h3>You Might Also Like</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
                 "type_preset": "h2",
                 "font": "var(--font-heading--family)",
                 "font_size": "",
@@ -333,9 +343,6 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -355,7 +362,10 @@
               }
             }
           },
-          "block_order": ["product_list_text", "product_list_button"]
+          "block_order": [
+            "product_list_text",
+            "product_list_button"
+          ]
         },
         "static-product-card": {
           "type": "_product-card",
@@ -433,10 +443,28 @@
               }
             }
           },
-          "block_order": ["product-card-gallery", "product_title", "price"]
+          "block_order": [
+            "product-card-gallery",
+            "product_title",
+            "price"
+          ]
         }
       },
-      "block_order": []
+      "settings": {
+        "layout_type": "carousel",
+        "max_products": 7,
+        "columns": 4,
+        "mobile_card_size": "44cqw",
+        "columns_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 40,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
     }
   },
   "order": [
