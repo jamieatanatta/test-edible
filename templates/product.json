@@ -293,6 +293,16 @@
         "padding-block-end": 80
       }
     },
+    "grid-overlay": {
+      "type": "custom-liquid",
+      "settings": {
+        "source": "<div class=\"grid-overlay-container\" style=\"position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;pointer-events:none;opacity:0.2;\"><div style=\"max-width:1536px;margin:0 auto;height:100%;display:grid;grid-template-columns:64px repeat(12, 88px) 64px;justify-content:center;\"><div style=\"background-color:#526F1B;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#D90400;height:100%;\"></div><div style=\"background-color:#526F1B;height:100%;\"></div></div></div><style>.grid-overlay-container{display:block;}@media screen and (max-width:749px){.grid-overlay-container{display:none;}}</style>",
+        "color_scheme": "",
+        "section_width": "full-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "blogs": {
       "type": "product-list",
       "blocks": {
@@ -471,6 +481,7 @@
     "main",
     "reviews",
     "faq",
-    "blogs"
+    "blogs",
+    "grid-overlay"
   ]
 }
