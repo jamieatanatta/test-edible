@@ -28,6 +28,22 @@
               "type": "review",
               "settings": {}
             },
+            "title-text": {
+              "type": "text",
+              "settings": {
+                "text": "<h1>{{ closest.product.title }}</h1>",
+                "type_preset": "h2",
+                "alignment": "left"
+              }
+            },
+            "price": {
+              "type": "price",
+              "settings": {
+                "show_tax_info": false,
+                "type_preset": "h4",
+                "alignment": "left"
+              }
+            },
             "product-description": {
               "type": "product-description",
               "settings": {}
@@ -92,6 +108,8 @@
           },
           "block_order": [
             "review",
+            "title-text",
+            "price",
             "product-description",
             "variant-picker",
             "delivery-options",

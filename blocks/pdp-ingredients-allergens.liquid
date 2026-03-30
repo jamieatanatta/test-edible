@@ -24,7 +24,7 @@
     </summary>
     <div class="pdp-ingredients__content">
       {% if block.settings.show_allergen_icons %}
-        <p class="pdp-ingredients__allergens-title">Allergens</p>
+        <p class="pdp-ingredients__allergens-title">{{ 'sections.pdp_ingredients.allergens' | t }}</p>
         <div class="pdp-ingredients__allergen-grid">
           {% if block.settings.show_egg %}
             {% render 'pdp-allergen-icon', icon_name: 'egg', label: 'Egg' %}
@@ -172,7 +172,7 @@
     },
     {
       "type": "header",
-      "content": "Allergens"
+      "content": "t:content.allergens"
     },
     {
       "type": "checkbox",
@@ -224,62 +224,62 @@
     },
     {
       "type": "header",
-      "content": "Accordion rows"
+      "content": "t:content.accordion_rows"
     },
     {
       "type": "text",
       "id": "faq_heading_1",
-      "label": "Row 1 heading",
+      "label": "t:settings.row_1_heading",
       "default": "About product"
     },
     {
       "type": "textarea",
       "id": "faq_content_1",
-      "label": "Row 1 content"
+      "label": "t:settings.row_1_content"
     },
     {
       "type": "text",
       "id": "faq_heading_2",
-      "label": "Row 2 heading",
+      "label": "t:settings.row_2_heading",
       "default": "FAQ's"
     },
     {
       "type": "textarea",
       "id": "faq_content_2",
-      "label": "Row 2 content"
+      "label": "t:settings.row_2_content"
     },
     {
       "type": "text",
       "id": "faq_heading_3",
-      "label": "Row 3 heading",
+      "label": "t:settings.row_3_heading",
       "default": "Accordion 4"
     },
     {
       "type": "textarea",
       "id": "faq_content_3",
-      "label": "Row 3 content"
+      "label": "t:settings.row_3_content"
     },
     {
       "type": "text",
       "id": "faq_heading_4",
-      "label": "Row 4 heading",
+      "label": "t:settings.row_4_heading",
       "default": "Accordion 5"
     },
     {
       "type": "textarea",
       "id": "faq_content_4",
-      "label": "Row 4 content"
+      "label": "t:settings.row_4_content"
     },
     {
       "type": "text",
       "id": "faq_heading_5",
-      "label": "Row 5 heading",
+      "label": "t:settings.row_5_heading",
       "default": "Accordion 6"
     },
     {
       "type": "textarea",
       "id": "faq_content_5",
-      "label": "Row 5 content"
+      "label": "t:settings.row_5_content"
     }
   ],
   "presets": [

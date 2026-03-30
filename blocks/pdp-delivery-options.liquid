@@ -6,6 +6,8 @@
   @example {% content_for 'block', type: 'pdp-delivery-options', id: 'delivery-options' %}
 {% enddoc %}
 
+{{ 'pdp-custom.css' | asset_url | stylesheet_tag }}
+
 <div class="pdp-delivery-options" {{ block.shopify_attributes }}>
   <div class="pdp-delivery-options__heading">
     <span class="pdp-delivery-options__heading-text">{{ block.settings.heading_text | escape }}</span>

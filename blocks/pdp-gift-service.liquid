@@ -6,6 +6,8 @@
   @example {% content_for 'block', type: 'pdp-gift-service', id: 'gift-service' %}
 {% enddoc %}
 
+{{ 'pdp-custom.css' | asset_url | stylesheet_tag }}
+
 <div
   class="pdp-gift-service"
   style="--pdp-gift-icon-bg: {{ block.settings.icon_background_color }};"
