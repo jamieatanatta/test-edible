@@ -1,0 +1,291 @@
+{% doc %}
+  PDP Ingredients & Allergens Block
+
+  Renders an expandable section with allergen icons and disclaimer text,
+  plus additional FAQ-style accordion rows.
+
+  @example {% content_for 'block', type: 'pdp-ingredients-allergens', id: 'ingredients-allergens' %}
+{% enddoc %}
+
+{{ 'pdp-custom.css' | asset_url | stylesheet_tag }}
+
+<pdp-ingredients-block class="pdp-ingredients" {{ block.shopify_attributes }}>
+  {%- comment -%} Ingredients & Allergy Info Section {%- endcomment -%}
+  <details class="pdp-ingredients__section" open>
+    <summary class="pdp-ingredients__header">
+      <span class="pdp-ingredients__header-text">{{ block.settings.heading_text | escape }}</span>
+      <img
+        class="pdp-ingredients__chevron"
+        src="{{ 'ingredients-chevron.svg' | asset_url }}"
+        alt="" role="presentation"
+        width="24"
+        height="24"
+      >
+    </summary>
+    <div class="pdp-ingredients__content">
+      {% if block.settings.show_allergen_icons %}
+        <p class="pdp-ingredients__allergens-title">Allergens</p>
+        <div class="pdp-ingredients__allergen-grid">
+          {% if block.settings.show_egg %}
+            {% render 'pdp-allergen-icon', icon_name: 'egg', label: 'Egg' %}
+          {% endif %}
+          {% if block.settings.show_wheat %}
+            {% render 'pdp-allergen-icon', icon_name: 'wheat', label: 'Wheat' %}
+          {% endif %}
+          {% if block.settings.show_soy %}
+            {% render 'pdp-allergen-icon', icon_name: 'soy', label: 'Soy' %}
+          {% endif %}
+          {% if block.settings.show_milk %}
+            {% render 'pdp-allergen-icon', icon_name: 'milk', label: 'Milk' %}
+          {% endif %}
+          {% if block.settings.show_peanuts %}
+            {% render 'pdp-allergen-icon', icon_name: 'peanuts', label: 'Peanuts' %}
+          {% endif %}
+          {% if block.settings.show_treenuts %}
+            {% render 'pdp-allergen-icon', icon_name: 'treenuts', label: 'Tree Nuts' %}
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if block.settings.allergen_disclaimer != blank %}
+        <p class="pdp-ingredients__disclaimer">{{ block.settings.allergen_disclaimer | escape }}</p>
+      {% endif %}
+    </div>
+  </details>
+
+  {%- comment -%} About Product Row {%- endcomment -%}
+  {% if block.settings.faq_heading_1 != blank %}
+    <details class="pdp-ingredients__section">
+      <summary class="pdp-ingredients__header">
+        <span class="pdp-ingredients__header-text">{{ block.settings.faq_heading_1 | escape }}</span>
+        <img
+          class="pdp-ingredients__chevron"
+          src="{{ 'faq-chevron.svg' | asset_url }}"
+          alt="" role="presentation"
+          width="24"
+          height="24"
+        >
+      </summary>
+      {% if block.settings.faq_content_1 != blank %}
+        <div class="pdp-ingredients__content">
+          <p class="pdp-ingredients__disclaimer">{{ block.settings.faq_content_1 | escape }}</p>
+        </div>
+      {% endif %}
+    </details>
+  {% endif %}
+
+  {%- comment -%} FAQ Row {%- endcomment -%}
+  {% if block.settings.faq_heading_2 != blank %}
+    <details class="pdp-ingredients__section">
+      <summary class="pdp-ingredients__header">
+        <span class="pdp-ingredients__header-text">{{ block.settings.faq_heading_2 | escape }}</span>
+        <img
+          class="pdp-ingredients__chevron"
+          src="{{ 'faq-chevron.svg' | asset_url }}"
+          alt="" role="presentation"
+          width="24"
+          height="24"
+        >
+      </summary>
+      {% if block.settings.faq_content_2 != blank %}
+        <div class="pdp-ingredients__content">
+          <p class="pdp-ingredients__disclaimer">{{ block.settings.faq_content_2 | escape }}</p>
+        </div>
+      {% endif %}
+    </details>
+  {% endif %}
+
+  {%- comment -%} Additional Accordion Rows {%- endcomment -%}
+  {% if block.settings.faq_heading_3 != blank %}
+    <details class="pdp-ingredients__section">
+      <summary class="pdp-ingredients__header">
+        <span class="pdp-ingredients__header-text">{{ block.settings.faq_heading_3 | escape }}</span>
+        <img
+          class="pdp-ingredients__chevron"
+          src="{{ 'faq-chevron.svg' | asset_url }}"
+          alt="" role="presentation"
+          width="24"
+          height="24"
+        >
+      </summary>
+      {% if block.settings.faq_content_3 != blank %}
+        <div class="pdp-ingredients__content">
+          <p class="pdp-ingredients__disclaimer">{{ block.settings.faq_content_3 | escape }}</p>
+        </div>
+      {% endif %}
+    </details>
+  {% endif %}
+
+  {% if block.settings.faq_heading_4 != blank %}
+    <details class="pdp-ingredients__section">
+      <summary class="pdp-ingredients__header">
+        <span class="pdp-ingredients__header-text">{{ block.settings.faq_heading_4 | escape }}</span>
+        <img
+          class="pdp-ingredients__chevron"
+          src="{{ 'faq-chevron.svg' | asset_url }}"
+          alt="" role="presentation"
+          width="24"
+          height="24"
+        >
+      </summary>
+      {% if block.settings.faq_content_4 != blank %}
+        <div class="pdp-ingredients__content">
+          <p class="pdp-ingredients__disclaimer">{{ block.settings.faq_content_4 | escape }}</p>
+        </div>
+      {% endif %}
+    </details>
+  {% endif %}
+
+  {% if block.settings.faq_heading_5 != blank %}
+    <details class="pdp-ingredients__section">
+      <summary class="pdp-ingredients__header">
+        <span class="pdp-ingredients__header-text">{{ block.settings.faq_heading_5 | escape }}</span>
+        <img
+          class="pdp-ingredients__chevron"
+          src="{{ 'faq-chevron.svg' | asset_url }}"
+          alt="" role="presentation"
+          width="24"
+          height="24"
+        >
+      </summary>
+      {% if block.settings.faq_content_5 != blank %}
+        <div class="pdp-ingredients__content">
+          <p class="pdp-ingredients__disclaimer">{{ block.settings.faq_content_5 | escape }}</p>
+        </div>
+      {% endif %}
+    </details>
+  {% endif %}
+</pdp-ingredients-block>
+
+{% schema %}
+{
+  "name": "t:names.pdp_ingredients_allergens",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "t:settings.heading_text",
+      "default": "Ingredients & allergy info"
+    },
+    {
+      "type": "header",
+      "content": "Allergens"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_allergen_icons",
+      "label": "t:settings.show_allergen_icons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_egg",
+      "label": "t:settings.show_egg",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_wheat",
+      "label": "t:settings.show_wheat",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_soy",
+      "label": "t:settings.show_soy",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_milk",
+      "label": "t:settings.show_milk",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_peanuts",
+      "label": "t:settings.show_peanuts",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_treenuts",
+      "label": "t:settings.show_treenuts",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "allergen_disclaimer",
+      "label": "t:settings.allergen_disclaimer",
+      "default": "Edible Arrangements products may contain egg, wheat, soy, milk, peanuts, and tree nuts. We recommend that you take the necessary precautions based on any related allergies"
+    },
+    {
+      "type": "header",
+      "content": "Accordion rows"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading_1",
+      "label": "Row 1 heading",
+      "default": "About product"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_content_1",
+      "label": "Row 1 content"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading_2",
+      "label": "Row 2 heading",
+      "default": "FAQ's"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_content_2",
+      "label": "Row 2 content"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading_3",
+      "label": "Row 3 heading",
+      "default": "Accordion 4"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_content_3",
+      "label": "Row 3 content"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading_4",
+      "label": "Row 4 heading",
+      "default": "Accordion 5"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_content_4",
+      "label": "Row 4 content"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading_5",
+      "label": "Row 5 heading",
+      "default": "Accordion 6"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_content_5",
+      "label": "Row 5 content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.pdp_ingredients_allergens"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,94 @@
+{% doc %}
+  PDP Delivery Options Block
+
+  Renders two dropdown-style selectors for delivery date and zip code.
+
+  @example {% content_for 'block', type: 'pdp-delivery-options', id: 'delivery-options' %}
+{% enddoc %}
+
+<div class="pdp-delivery-options" {{ block.shopify_attributes }}>
+  <div class="pdp-delivery-options__heading">
+    <span class="pdp-delivery-options__heading-text">{{ block.settings.heading_text | escape }}</span>
+    {% if block.settings.show_info_icon %}
+      <img
+        class="pdp-delivery-options__heading-icon"
+        src="{{ 'delivery-info.svg' | asset_url }}"
+        alt="Delivery information"
+        width="14"
+        height="14"
+        loading="lazy"
+      >
+    {% endif %}
+  </div>
+  <div class="pdp-delivery-options__row">
+    <button type="button" class="pdp-delivery-options__dropdown" aria-label="Select delivery date">
+      <span class="pdp-delivery-options__dropdown-content">
+        <img
+          class="pdp-delivery-options__dropdown-icon"
+          src="{{ 'same-day-calendar.svg' | asset_url }}"
+          alt="" role="presentation"
+          width="14"
+          height="14"
+        >
+        <span class="pdp-delivery-options__dropdown-text">Same day</span>
+      </span>
+      <img
+        class="pdp-delivery-options__chevron"
+        src="{{ 'same-day-chevron.svg' | asset_url }}"
+        alt="" role="presentation"
+        width="14"
+        height="14"
+      >
+    </button>
+    <button type="button" class="pdp-delivery-options__dropdown" aria-label="Select zip code">
+      <span class="pdp-delivery-options__dropdown-content">
+        <img
+          class="pdp-delivery-options__dropdown-icon"
+          src="{{ 'location-icon.svg' | asset_url }}"
+          alt="" role="presentation"
+          width="14"
+          height="14"
+        >
+        <span class="pdp-delivery-options__dropdown-text">{{ block.settings.default_zip_code | escape }}</span>
+      </span>
+      <img
+        class="pdp-delivery-options__chevron"
+        src="{{ 'zip-code-chevron.svg' | asset_url }}"
+        alt="" role="presentation"
+        width="14"
+        height="14"
+      >
+    </button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:names.pdp_delivery_options",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "t:settings.heading_text",
+      "default": "Select delivery"
+    },
+    {
+      "type": "text",
+      "id": "default_zip_code",
+      "label": "t:settings.default_zip_code",
+      "default": "29607"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_info_icon",
+      "label": "t:settings.show_info_icon",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.pdp_delivery_options"
+    }
+  ]
+}
+{% endschema %}

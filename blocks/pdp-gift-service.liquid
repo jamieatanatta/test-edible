@@ -1,0 +1,62 @@
+{% doc %}
+  PDP Gift Service Banner Block
+
+  Renders a promotional banner for free gift service with icon and text.
+
+  @example {% content_for 'block', type: 'pdp-gift-service', id: 'gift-service' %}
+{% enddoc %}
+
+<div
+  class="pdp-gift-service"
+  style="--pdp-gift-icon-bg: {{ block.settings.icon_background_color }};"
+  {{ block.shopify_attributes }}
+>
+  <div class="pdp-gift-service__icon-wrapper">
+    <img
+      class="pdp-gift-service__icon"
+      src="{{ 'gift.svg' | asset_url }}"
+      alt="" role="presentation"
+      width="16"
+      height="16"
+    >
+  </div>
+  <div class="pdp-gift-service__text-container">
+    {% if block.settings.heading_text != blank %}
+      <p class="pdp-gift-service__heading">{{ block.settings.heading_text | escape }}</p>
+    {% endif %}
+    {% if block.settings.description_text != blank %}
+      <p class="pdp-gift-service__description">{{ block.settings.description_text | escape }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:names.pdp_gift_service",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "t:settings.heading_text",
+      "default": "Free Premium Gift Service with every order"
+    },
+    {
+      "type": "text",
+      "id": "description_text",
+      "label": "t:settings.description_text",
+      "default": "Elegant wrapping enhances every special edible gift"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "t:settings.icon_background_color",
+      "default": "#CDE7B0"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.pdp_gift_service"
+    }
+  ]
+}
+{% endschema %}

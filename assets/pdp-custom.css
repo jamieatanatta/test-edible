@@ -1,0 +1,459 @@
+/* ==========================================================================
+   PDP Custom Styles
+   Custom styling for the Product Detail Page components
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   Promo Badge & Price Styling
+   --------------------------------------------------------------------------- */
+
+.pdp-promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pdp-promo-badge__code {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #A00400;
+}
+
+.pdp-same-day-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 24px;
+  background-color: #CDE7B0;
+}
+
+.pdp-same-day-badge__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.pdp-same-day-badge__text {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #1D1D1D;
+}
+
+/* ---------------------------------------------------------------------------
+   Add to Cart Button Override
+   --------------------------------------------------------------------------- */
+
+.pdp-add-to-cart .button,
+.pdp-add-to-cart .add-to-cart-button {
+  background-color: #E10600;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 24px;
+  padding: 4px 32px;
+  font-family: var(--font-body--family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  width: 100%;
+  min-height: 48px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pdp-add-to-cart .button:hover,
+.pdp-add-to-cart .add-to-cart-button:hover {
+  background-color: #c00500;
+}
+
+@media screen and (max-width: 749px) {
+  .pdp-add-to-cart .button,
+  .pdp-add-to-cart .add-to-cart-button {
+    padding: 4px 24px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 40px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Delivery Options
+   --------------------------------------------------------------------------- */
+
+.pdp-delivery-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pdp-delivery-options__heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pdp-delivery-options__heading-text {
+  font-family: var(--font-body--family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  color: #1D1D1D;
+}
+
+.pdp-delivery-options__heading-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.pdp-delivery-options__row {
+  display: flex;
+  gap: 8px;
+}
+
+.pdp-delivery-options__dropdown {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px;
+  border: 1px solid #DBDBDB;
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.pdp-delivery-options__dropdown-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pdp-delivery-options__dropdown-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.pdp-delivery-options__dropdown-text {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #1D1D1D;
+}
+
+.pdp-delivery-options__chevron {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .pdp-delivery-options__heading-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Gift Service Banner
+   --------------------------------------------------------------------------- */
+
+.pdp-gift-service {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pdp-gift-service__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 100px;
+  padding: 4px;
+  background-color: var(--pdp-gift-icon-bg, #CDE7B0);
+}
+
+.pdp-gift-service__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.pdp-gift-service__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pdp-gift-service__heading {
+  font-family: var(--font-body--family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  color: #1D1D1D;
+  margin: 0;
+}
+
+.pdp-gift-service__description {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #464646;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   UGC Community Love Carousel
+   --------------------------------------------------------------------------- */
+
+.pdp-ugc-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.pdp-ugc-carousel__heading {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1D1D1D;
+  margin: 0;
+}
+
+.pdp-ugc-carousel__images {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pdp-ugc-carousel__images::-webkit-scrollbar {
+  display: none;
+}
+
+.pdp-ugc-carousel__image {
+  width: 65px;
+  height: 116px;
+  min-width: 65px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 749px) {
+  .pdp-ugc-carousel {
+    padding-block: 8px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Ingredients & Allergens
+   --------------------------------------------------------------------------- */
+
+.pdp-ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pdp-ingredients__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  padding-block: 16px;
+  border-top: 1px solid #F2E7DF;
+}
+
+.pdp-ingredients__section:last-child {
+  border-bottom: 1px solid #F2E7DF;
+}
+
+.pdp-ingredients__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  text-align: start;
+}
+
+.pdp-ingredients__header-text {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1D1D1D;
+  flex: 1;
+}
+
+.pdp-ingredients__chevron {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.pdp-ingredients__section[open] .pdp-ingredients__chevron {
+  transform: rotate(180deg);
+}
+
+.pdp-ingredients__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pdp-ingredients__allergens-title {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1D1D1D;
+  margin: 0;
+}
+
+.pdp-ingredients__allergen-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+}
+
+@media screen and (max-width: 749px) {
+  .pdp-ingredients__allergen-grid {
+    gap: 24px;
+  }
+}
+
+.pdp-ingredients__disclaimer {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #464646;
+  margin: 0;
+}
+
+.pdp-ingredients__faq-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-block: 16px;
+  border-top: 1px solid #F2E7DF;
+  cursor: pointer;
+  background: none;
+  border-inline: none;
+  border-bottom: none;
+  width: 100%;
+  text-align: start;
+}
+
+.pdp-ingredients__faq-row:last-child {
+  border-bottom: 1px solid #F2E7DF;
+}
+
+.pdp-ingredients__faq-text {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1D1D1D;
+  flex: 1;
+}
+
+.pdp-ingredients__faq-chevron {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+/* ---------------------------------------------------------------------------
+   Allergen Icon
+   --------------------------------------------------------------------------- */
+
+.pdp-allergen-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pdp-allergen-icon__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 40px;
+  background-color: #F2E7DF;
+}
+
+.pdp-allergen-icon__circle img {
+  width: 48px;
+  height: 48px;
+}
+
+.pdp-allergen-icon__label {
+  font-family: var(--font-body--family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  color: #1D1D1D;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------------------
+   PayPal Pay-in-4 Text
+   --------------------------------------------------------------------------- */
+
+.pdp-paypal-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pdp-paypal-info__logo {
+  width: 68px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.pdp-paypal-info__text {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #535353;
+}
+
+.pdp-paypal-info__learn-more {
+  font-family: var(--font-body--family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  color: #1D1D1D;
+  text-decoration: underline;
+}

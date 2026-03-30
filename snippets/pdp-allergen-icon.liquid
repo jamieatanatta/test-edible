@@ -1,0 +1,36 @@
+{% doc %}
+  Allergen Icon Component
+
+  Renders a single allergen icon with a circular background and centered label.
+
+  @param icon_name {String} Icon name suffix (e.g. 'egg', 'wheat') — maps to icon-food-{icon_name}.svg (required)
+  @param label {String} Display label below the icon (e.g. 'Egg', 'Wheat') (required)
+
+  @example
+    {% render 'pdp-allergen-icon', icon_name: 'egg', label: 'Egg' %}
+{% enddoc %}
+
+{% liquid
+  assign icon_name = icon_name | default: ''
+  assign label = label | default: ''
+%}
+
+{% unless icon_name != blank %}
+  <!-- Error: icon_name parameter required for pdp-allergen-icon snippet -->
+  {% break %}
+{% endunless %}
+
+<div class="pdp-allergen-icon">
+  <div class="pdp-allergen-icon__circle">
+    <img
+      src="{{ 'icon-food-' | append: icon_name | append: '.svg' | asset_url }}"
+      alt="{{ label | escape }} allergen icon"
+      width="48"
+      height="48"
+      loading="lazy"
+    >
+  </div>
+  {% if label != blank %}
+    <span class="pdp-allergen-icon__label">{{ label | escape }}</span>
+  {% endif %}
+</div>

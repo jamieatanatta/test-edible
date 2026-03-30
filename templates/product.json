@@ -1,17 +1,107 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
       "type": "product-information",
-      "settings": {}
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "gap": 16,
+        "enable_sticky_add_to_cart": true,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      },
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "gap": 16
+          },
+          "blocks": {
+            "review": {
+              "type": "review",
+              "settings": {}
+            },
+            "product-description": {
+              "type": "product-description",
+              "settings": {}
+            },
+            "variant-picker": {
+              "type": "variant-picker",
+              "settings": {}
+            },
+            "delivery-options": {
+              "type": "pdp-delivery-options",
+              "settings": {
+                "heading_text": "Select delivery",
+                "default_zip_code": "29607",
+                "show_info_icon": true
+              }
+            },
+            "gift-service": {
+              "type": "pdp-gift-service",
+              "settings": {
+                "heading_text": "Free Premium Gift Service with every order",
+                "description_text": "Elegant wrapping enhances every special edible gift",
+                "icon_background_color": "#CDE7B0"
+              }
+            },
+            "buy-buttons": {
+              "type": "buy-buttons",
+              "settings": {}
+            },
+            "ugc-carousel": {
+              "type": "pdp-ugc-carousel",
+              "settings": {
+                "heading_text": "Community love",
+                "image_1": "shopify://shop_images/ugc-image-desktop-24978561.png",
+                "image_2": "shopify://shop_images/ugc-image-desktop-24978562.png",
+                "image_3": "shopify://shop_images/ugc-image-desktop-24978563.png",
+                "image_4": "shopify://shop_images/ugc-image-desktop-24978564.png",
+                "image_5": "shopify://shop_images/ugc-image-desktop-24978565.png",
+                "image_6": "shopify://shop_images/ugc-image-desktop-24978566.png",
+                "image_7": "shopify://shop_images/ugc-image-desktop-24978567.png",
+                "image_8": "shopify://shop_images/ugc-image-desktop-24978568.png"
+              }
+            },
+            "ingredients-allergens": {
+              "type": "pdp-ingredients-allergens",
+              "settings": {
+                "heading_text": "Ingredients & allergy info",
+                "show_allergen_icons": true,
+                "show_egg": true,
+                "show_wheat": true,
+                "show_soy": true,
+                "show_milk": true,
+                "show_peanuts": true,
+                "show_treenuts": true,
+                "allergen_disclaimer": "Edible Arrangements products may contain egg, wheat, soy, milk, peanuts, and tree nuts. We recommend that you take the necessary precautions based on any related allergies",
+                "faq_heading_1": "About product",
+                "faq_heading_2": "FAQ's",
+                "faq_heading_3": "Accordion 4",
+                "faq_heading_4": "Accordion 5",
+                "faq_heading_5": "Accordion 6"
+              }
+            }
+          },
+          "block_order": [
+            "review",
+            "product-description",
+            "variant-picker",
+            "delivery-options",
+            "gift-service",
+            "buy-buttons",
+            "ugc-carousel",
+            "ingredients-allergens"
+          ]
+        }
+      }
     }
   },
   "order": [

@@ -1,0 +1,103 @@
+{% doc %}
+  PDP UGC Community Love Carousel Block
+
+  Renders a heading and horizontally scrolling row of user-generated content images.
+
+  @example {% content_for 'block', type: 'pdp-ugc-carousel', id: 'ugc-carousel' %}
+{% enddoc %}
+
+{{ 'pdp-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="pdp-ugc-carousel" {{ block.shopify_attributes }}>
+  {% if block.settings.heading_text != blank %}
+    <h3 class="pdp-ugc-carousel__heading">{{ block.settings.heading_text | escape }}</h3>
+  {% endif %}
+  <div class="pdp-ugc-carousel__images">
+    {% liquid
+      assign images = block.settings | where: 'image' | default: empty
+    %}
+    {% if block.settings.image_1 %}
+      {{ block.settings.image_1 | image_url: width: 130 | image_tag: class: 'pdp-ugc-carousel__image', loading: 'lazy', alt: 'Community photo 1', widths: '65, 130' }}
+    {% endif %}
+    {% if block.settings.image_2 %}
+      {{ block.settings.image_2 | image_url: width: 130 | image_tag: class: 'pdp-ugc-carousel__image', loading: 'lazy', alt: 'Community photo 2', widths: '65, 130' }}
+    {% endif %}
+    {% if block.settings.image_3 %}
+      {{ block.settings.image_3 | image_url: width: 130 | image_tag: class: 'pdp-ugc-carousel__image', loading: 'lazy', alt: 'Community photo 3', widths: '65, 130' }}
+    {% endif %}
+    {% if block.settings.image_4 %}
+      {{ block.settings.image_4 | image_url: width: 130 | image_tag: class: 'pdp-ugc-carousel__image', loading: 'lazy', alt: 'Community photo 4', widths: '65, 130' }}
+    {% endif %}
+    {% if block.settings.image_5 %}
+      {{ block.settings.image_5 | image_url: width: 130 | image_tag: class: 'pdp-ugc-carousel__image', loading: 'lazy', alt: 'Community photo 5', widths: '65, 130' }}
+    {% endif %}
+    {% if block.settings.image_6 %}
+      {{ block.settings.image_6 | image_url: width: 130 | image_tag: class: 'pdp-ugc-carousel__image', loading: 'lazy', alt: 'Community photo 6', widths: '65, 130' }}
+    {% endif %}
+    {% if block.settings.image_7 %}
+      {{ block.settings.image_7 | image_url: width: 130 | image_tag: class: 'pdp-ugc-carousel__image', loading: 'lazy', alt: 'Community photo 7', widths: '65, 130' }}
+    {% endif %}
+    {% if block.settings.image_8 %}
+      {{ block.settings.image_8 | image_url: width: 130 | image_tag: class: 'pdp-ugc-carousel__image', loading: 'lazy', alt: 'Community photo 8', widths: '65, 130' }}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:names.pdp_ugc_carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "t:settings.heading_text",
+      "default": "Community love"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "t:settings.image_1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "t:settings.image_2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "t:settings.image_3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "t:settings.image_4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "t:settings.image_5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "t:settings.image_6"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_7",
+      "label": "t:settings.image_7"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_8",
+      "label": "t:settings.image_8"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.pdp_ugc_carousel"
+    }
+  ]
+}
+{% endschema %}
