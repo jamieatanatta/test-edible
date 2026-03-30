@@ -120,9 +120,26 @@
           ]
         }
       }
+    },
+    "reviews": {
+      "type": "pdp-reviews",
+      "settings": {
+        "section_heading": "Rating & Reviews",
+        "heading_color": "#5F0300",
+        "average_rating": "4.8",
+        "total_reviews": "2,994 reviews",
+        "recommendation_text": "98% of customers would recommend this product",
+        "verified_logo": "shopify://shop_images/verified-reviews-logo-desktop-249725133.png",
+        "ai_summary_heading": "AI Generated Review Summary",
+        "ai_summary_text": "Customers love the freshness, presentation, and taste of the arrangements. Highlights include beautifully crafted fruit designs, rich chocolate-dipped treats, and reliable delivery service. Many reviewers appreciate the perfect balance of sweetness and quality, making these arrangements ideal for gifts, celebrations, and special occasions. Overall, the brand is praised for creating memorable experiences with both visual appeal and flavor.",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 0,
+        "padding-block-end": 80
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "reviews"
   ]
 }
