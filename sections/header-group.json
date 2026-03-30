@@ -17,11 +17,11 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Save Up to 25% Off Select Valentine's Day Gifts! <strong>Shop Now<\/strong>",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
-            "weight": "",
+            "weight": "400",
             "letter_spacing": "normal",
             "case": "none"
           },
@@ -34,11 +34,15 @@
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
-        "section_width": "page-width",
+        "section_width": "full-width",
         "color_scheme": "scheme-1",
+        "background_color": "#F6B2B0",
         "divider_width": 1,
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "courtesy_nav_link_1_text": "Help",
+        "courtesy_nav_link_2_text": "Find a Store",
+        "courtesy_nav_link_3_text": "About Us",
+        "padding-block-start": 8,
+        "padding-block-end": 8
       }
     },
     "header_section": {

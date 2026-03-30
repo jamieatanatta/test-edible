@@ -7,8 +7,15 @@
 {% endif %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+{% if section.settings.background_color != blank %}
+  {% style %}
+    #shopify-section-{{ section.id }} .announcement-bar--custom-bg {
+      --announcement-custom-bg: {{ section.settings.background_color }};
+    }
+  {% endstyle %}
+{% endif %}
 <aside
-  class="announcement-bar spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+  class="announcement-bar spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}{% if section.settings.background_color != blank %} announcement-bar--custom-bg{% endif %}"
   style="{% render 'spacing-padding', settings: section.settings %}; --border-bottom-width: {{ section.settings.divider_width }}px;"
 >
   {% liquid
@@ -34,11 +41,69 @@
       {% content_for 'blocks' %}
     </div>
   </announcement-bar-component>
+
+  {% liquid
+    assign has_courtesy_nav = false
+    if section.settings.courtesy_nav_link_1_text != blank or section.settings.courtesy_nav_link_2_text != blank or section.settings.courtesy_nav_link_3_text != blank
+      assign has_courtesy_nav = true
+    endif
+  %}
+
+  {% if has_courtesy_nav %}
+    <nav class="announcement-bar__courtesy-nav" aria-label="Courtesy navigation">
+      {% if section.settings.courtesy_nav_link_1_text != blank %}
+        <a class="announcement-bar__courtesy-link" href="{{ section.settings.courtesy_nav_link_1_url | default: '#' }}">
+          {{- section.settings.courtesy_nav_link_1_text | escape -}}
+        </a>
+      {% endif %}
+      {% if section.settings.courtesy_nav_link_2_text != blank %}
+        <a class="announcement-bar__courtesy-link" href="{{ section.settings.courtesy_nav_link_2_url | default: '#' }}">
+          {{- section.settings.courtesy_nav_link_2_text | escape -}}
+        </a>
+      {% endif %}
+      {% if section.settings.courtesy_nav_link_3_text != blank %}
+        <a class="announcement-bar__courtesy-link" href="{{ section.settings.courtesy_nav_link_3_url | default: '#' }}">
+          {{- section.settings.courtesy_nav_link_3_text | escape -}}
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
 </aside>
 
 {% stylesheet %}
   .announcement-bar {
+    position: relative;
     border-block-end: var(--border-bottom-width) solid var(--color-border);
+  }
+
+  .announcement-bar--custom-bg {
+    background-color: var(--announcement-custom-bg);
+  }
+
+  .announcement-bar__courtesy-nav {
+    display: none;
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+      position: absolute;
+      inset-inline-end: 64px;
+      inset-block-start: 50%;
+      transform: translateY(-50%);
+      gap: 16px;
+      align-items: center;
+    }
+  }
+
+  .announcement-bar__courtesy-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 17px;
+    color: var(--color-foreground);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .announcement-bar__slider {
@@ -147,6 +212,11 @@
       "content": "t:content.appearance"
     },
     {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color"
+    },
+    {
       "type": "select",
       "id": "section_width",
       "label": "t:settings.section_width",
@@ -177,6 +247,40 @@
       "step": 0.5,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.courtesy_navigation"
+    },
+    {
+      "type": "text",
+      "id": "courtesy_nav_link_1_text",
+      "label": "t:settings.link_text"
+    },
+    {
+      "type": "url",
+      "id": "courtesy_nav_link_1_url",
+      "label": "t:settings.link_url"
+    },
+    {
+      "type": "text",
+      "id": "courtesy_nav_link_2_text",
+      "label": "t:settings.link_text"
+    },
+    {
+      "type": "url",
+      "id": "courtesy_nav_link_2_url",
+      "label": "t:settings.link_url"
+    },
+    {
+      "type": "text",
+      "id": "courtesy_nav_link_3_text",
+      "label": "t:settings.link_text"
+    },
+    {
+      "type": "url",
+      "id": "courtesy_nav_link_3_url",
+      "label": "t:settings.link_url"
     },
     {
       "type": "header",
